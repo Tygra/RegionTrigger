@@ -35,9 +35,6 @@ namespace RegionTrigger
             RegionHooks.RegionDeleted += OnRegionDeleted;
 
             //output for testing
-            for (int b = 1; b < 1 << 5; b <<= 1) {
-                Console.WriteLine(b);
-            }
         }
 
         protected override void Dispose(bool disposing) {

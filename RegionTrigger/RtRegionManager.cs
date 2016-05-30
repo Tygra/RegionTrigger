@@ -24,16 +24,16 @@ namespace RegionTrigger {
             var table = new SqlTable("RtRegions",
                                      new SqlColumn("Id", MySqlDbType.Int32) { Primary = true, AutoIncrement = true },
                                      new SqlColumn("RegionId", MySqlDbType.Int32) { Unique = true, NotNull = true },
-                                     new SqlColumn("Flags", MySqlDbType.String),
-                                     new SqlColumn("Group", MySqlDbType.String, 32),
-                                     new SqlColumn("EnterMsg", MySqlDbType.String),
-                                     new SqlColumn("LeaveMsg", MySqlDbType.String),
-                                     new SqlColumn("Message", MySqlDbType.String, 20),
+                                     new SqlColumn("Flags", MySqlDbType.Text),
+                                     new SqlColumn("GroupName", MySqlDbType.VarChar, 32),
+                                     new SqlColumn("EnterMsg", MySqlDbType.Text),
+                                     new SqlColumn("LeaveMsg", MySqlDbType.Text),
+                                     new SqlColumn("Message", MySqlDbType.VarChar, 20),
                                      new SqlColumn("MessageInterval", MySqlDbType.Int32),
-                                     new SqlColumn("TempGroup", MySqlDbType.String, 32),
-                                     new SqlColumn("Itembans", MySqlDbType.String),
-                                     new SqlColumn("Projbans", MySqlDbType.String),
-                                     new SqlColumn("Tilebans", MySqlDbType.String)
+                                     new SqlColumn("TempGroup", MySqlDbType.VarChar, 32),
+                                     new SqlColumn("Itembans", MySqlDbType.Text),
+                                     new SqlColumn("Projbans", MySqlDbType.Text),
+                                     new SqlColumn("Tilebans", MySqlDbType.Text)
                 );
             var creator = new SqlTableCreator(db,
                                               db.GetSqlType() == SqlType.Sqlite
